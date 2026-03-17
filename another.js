@@ -27,13 +27,14 @@ function encrypt(){
         document.getElementById("emptymessage").innerHTML="EMPTY INPUT...!";
         return;
     }
-    if(code== 0){
-        document.getElementById("emptymessage").innerHTML="EMPTY CODE...!";
+    if(code<= 0){
+        document.getElementById("emptymessage").innerHTML="INVALID CODE...!";
         return;
     }
     for(let i=0;i<code;i++){
         encrypted=codeenc(encrypted);
     }
+    document.getElementById("emptymessage").innerHTML="";
     document.getElementById("normalmessage").value = encrypted;
 }
 function decrypt(){
@@ -43,12 +44,13 @@ function decrypt(){
         document.getElementById("emptymessage").innerHTML="EMPTY INPUT...!";
         return;
     }
-    if(code== 0){
-        document.getElementById("emptymessage").innerHTML="EMPTY CODE...!";
+    if(code<= 0){
+        document.getElementById("emptymessage").innerHTML="INVALID CODE...!";
         return;
     }
     for (let i=0;i<code;i++){
         decrypted=codedec(decrypted);
     }
+    document.getElementById("emptymessage").innerHTML="";
     document.getElementById("normalmessage").value = decrypted;
 }
